@@ -12,6 +12,17 @@ Public Class Form1
                 genshin = genshin.OpenSubKey("launcher")
                 Install_Path.Text = genshin.GetValue("InstPath")
                 Install_Path.ForeColor = Color.LimeGreen
+                Game_version.Text = genshin.GetValue("Version")
+                Game_version.ForeColor = Color.Orange
+                If version_check(Game_version.Text) Then
+                    Game_version.Text += " Supported"
+                    Game_version.ForeColor = Color.LimeGreen
+                Else
+                    Game_version.Text += " Untested"
+                    Game_version.ForeColor = Color.Orange
+                    MsgBox("This latest version of game has not been tested. But you can have a try.")
+                End If
+                flash_server_info()
                 If Exists(Install_Path.Text & "\Genshin Impact Game\YuanShen_Data\Persistent\AssetBundles\blocks\00\29342328.blk") = False Then
                     anti_status.Text = "Activated"
                     anti_status.ForeColor = Color.LimeGreen
@@ -33,6 +44,56 @@ Public Class Form1
         Deactivate.Enabled = False
         Start_Game.Enabled = False
         Start_with_launcher.Enabled = False
+    End Sub
+
+    Private Function version_check(version As String) As Boolean
+        Dim s As String() = "2.3.4.0".Split(".")
+        Dim v As String() = version.Split(".")
+        If Integer.Parse(s(0)) > Integer.Parse(v(0)) Then
+        ElseIf Integer.Parse(s(0)) = Integer.Parse(v(0)) Then
+            If Integer.Parse(s(1)) > Integer.Parse(v(1)) Then
+            ElseIf Integer.Parse(s(1)) = Integer.Parse(v(1)) Then
+                If Integer.Parse(s(2)) > Integer.Parse(v(2)) Then
+                ElseIf Integer.Parse(s(2)) = Integer.Parse(v(2)) Then
+                    If Integer.Parse(s(3)) > Integer.Parse(v(3)) Then
+                    ElseIf Integer.Parse(s(3)) = Integer.Parse(v(3)) Then
+                    Else
+                        Return False
+                    End If
+                Else
+                    Return False
+                End If
+            Else
+                Return False
+            End If
+        Else
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Sub flash_server_info()
+        If Exists(Install_Path.Text & "\Genshin Impact Game\config.ini") = False Then
+            Server.Text = "ERROR"
+            Channel.Text = "ERROR"
+            Server.ForeColor = Color.Red
+            Channel.ForeColor = Color.Red
+            Bilibili.Enabled = False
+            Official.Enabled = False
+            Exit Sub
+        End If
+        Dim info As String() = ReadAllLines(Install_Path.Text & "\Genshin Impact Game\config.ini")
+        If info(2).Replace("cps=", "") = "bilibili" Then
+            Server.Text = "Bilibili Server"
+        ElseIf info(2).Replace("cps=", "") = "pcad360pz" Then
+            Server.Text = "Offical Server"
+        Else
+            Server.Text = "Unsupported Server"
+        End If
+        Channel.Text = info(1).Replace("channel=", "")
+        Server.ForeColor = Color.Black
+        Channel.ForeColor = Color.Black
+        GC.Collect()
     End Sub
 
     Private Sub start(path As String)
@@ -109,5 +170,31 @@ Public Class Form1
         File.Move(Install_Path.Text & "\Genshin Impact Game\YuanShen_Data\Persistent\AssetBundles\blocks\00\TEMP\29342328.blk", Install_Path.Text & "\Genshin Impact Game\YuanShen_Data\Persistent\AssetBundles\blocks\00\29342328.blk")
         anti_status.Text = "Loaded"
         anti_status.ForeColor = Color.Orange
+    End Sub
+
+    Private Sub Bilibili_Click(sender As Object, e As EventArgs) Handles Bilibili.Click
+        Dim info As String() = ReadAllLines(Install_Path.Text & "\Genshin Impact Game\config.ini")
+        info(1) = "channel=14"
+        info(2) = "cps=bilibili"
+        Dim fin As String = info(0)
+        For index = 2 To info.Length
+            fin += Chr(10)
+            fin += info(index - 1)
+        Next
+        WriteAllText(Install_Path.Text & "\Genshin Impact Game\config.ini", fin)
+        flash_server_info()
+    End Sub
+
+    Private Sub Official_Click(sender As Object, e As EventArgs) Handles Official.Click
+        Dim info As String() = ReadAllLines(Install_Path.Text & "\Genshin Impact Game\config.ini")
+        info(1) = "channel=1"
+        info(2) = "cps=pcad360pz"
+        Dim fin As String = info(0)
+        For index = 2 To info.Length
+            fin += Chr(10)
+            fin += info(index - 1)
+        Next
+        WriteAllText(Install_Path.Text & "\Genshin Impact Game\config.ini", fin)
+        flash_server_info()
     End Sub
 End Class

@@ -33,24 +33,32 @@ Partial Class Form1
         Me.Deactivate = New System.Windows.Forms.Button()
         Me.Start_with_launcher = New System.Windows.Forms.Button()
         Me.Start_Game = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Game_version = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Server = New System.Windows.Forms.Label()
+        Me.Channel = New System.Windows.Forms.Label()
+        Me.Official = New System.Windows.Forms.Button()
+        Me.Bilibili = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(12, 35)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(174, 26)
+        Me.Label1.Size = New System.Drawing.Size(122, 26)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Installation path:"
+        Me.Label1.Text = "Game Path:"
         '
         'Install_Path
         '
         Me.Install_Path.AutoSize = True
         Me.Install_Path.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Install_Path.ForeColor = System.Drawing.Color.Orange
-        Me.Install_Path.Location = New System.Drawing.Point(192, 9)
+        Me.Install_Path.Location = New System.Drawing.Point(140, 35)
         Me.Install_Path.Name = "Install_Path"
         Me.Install_Path.Size = New System.Drawing.Size(206, 26)
         Me.Install_Path.TabIndex = 1
@@ -60,7 +68,7 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 35)
+        Me.Label2.Location = New System.Drawing.Point(12, 139)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(217, 26)
         Me.Label2.TabIndex = 2
@@ -71,7 +79,7 @@ Partial Class Form1
         Me.anti_status.AutoSize = True
         Me.anti_status.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.anti_status.ForeColor = System.Drawing.Color.Orange
-        Me.anti_status.Location = New System.Drawing.Point(235, 35)
+        Me.anti_status.Location = New System.Drawing.Point(235, 139)
         Me.anti_status.Name = "anti_status"
         Me.anti_status.Size = New System.Drawing.Size(82, 26)
         Me.anti_status.TabIndex = 3
@@ -81,7 +89,7 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label4.Location = New System.Drawing.Point(12, 61)
+        Me.Label4.Location = New System.Drawing.Point(12, 9)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(165, 26)
         Me.Label4.TabIndex = 4
@@ -92,7 +100,7 @@ Partial Class Form1
         Me.program_status.AutoSize = True
         Me.program_status.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.program_status.ForeColor = System.Drawing.Color.LimeGreen
-        Me.program_status.Location = New System.Drawing.Point(183, 61)
+        Me.program_status.Location = New System.Drawing.Point(183, 9)
         Me.program_status.Name = "program_status"
         Me.program_status.Size = New System.Drawing.Size(104, 26)
         Me.program_status.TabIndex = 5
@@ -101,7 +109,7 @@ Partial Class Form1
         'Activate
         '
         Me.Activate.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Activate.Location = New System.Drawing.Point(12, 90)
+        Me.Activate.Location = New System.Drawing.Point(12, 217)
         Me.Activate.Name = "Activate"
         Me.Activate.Size = New System.Drawing.Size(275, 43)
         Me.Activate.TabIndex = 6
@@ -111,7 +119,7 @@ Partial Class Form1
         'Deactivate
         '
         Me.Deactivate.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Deactivate.Location = New System.Drawing.Point(297, 90)
+        Me.Deactivate.Location = New System.Drawing.Point(297, 217)
         Me.Deactivate.Name = "Deactivate"
         Me.Deactivate.Size = New System.Drawing.Size(275, 43)
         Me.Deactivate.TabIndex = 7
@@ -121,7 +129,7 @@ Partial Class Form1
         'Start_with_launcher
         '
         Me.Start_with_launcher.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Start_with_launcher.Location = New System.Drawing.Point(12, 139)
+        Me.Start_with_launcher.Location = New System.Drawing.Point(12, 266)
         Me.Start_with_launcher.Name = "Start_with_launcher"
         Me.Start_with_launcher.Size = New System.Drawing.Size(560, 43)
         Me.Start_with_launcher.TabIndex = 8
@@ -131,18 +139,109 @@ Partial Class Form1
         'Start_Game
         '
         Me.Start_Game.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Start_Game.Location = New System.Drawing.Point(12, 188)
+        Me.Start_Game.Location = New System.Drawing.Point(12, 315)
         Me.Start_Game.Name = "Start_Game"
         Me.Start_Game.Size = New System.Drawing.Size(560, 43)
         Me.Start_Game.TabIndex = 9
         Me.Start_Game.Text = "Start The Game Directly (Recommend)"
         Me.Start_Game.UseVisualStyleBackColor = True
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label3.Location = New System.Drawing.Point(12, 61)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(151, 26)
+        Me.Label3.TabIndex = 10
+        Me.Label3.Text = "Game Version:"
+        '
+        'Game_version
+        '
+        Me.Game_version.AutoSize = True
+        Me.Game_version.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Game_version.ForeColor = System.Drawing.Color.Orange
+        Me.Game_version.Location = New System.Drawing.Point(169, 61)
+        Me.Game_version.Name = "Game_version"
+        Me.Game_version.Size = New System.Drawing.Size(206, 26)
+        Me.Game_version.TabIndex = 11
+        Me.Game_version.Text = "Reading Registry......"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label5.Location = New System.Drawing.Point(12, 87)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(139, 26)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Game Server:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label6.Location = New System.Drawing.Point(12, 113)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(156, 26)
+        Me.Label6.TabIndex = 13
+        Me.Label6.Text = "Game Channel:"
+        '
+        'Server
+        '
+        Me.Server.AutoSize = True
+        Me.Server.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Server.ForeColor = System.Drawing.Color.Orange
+        Me.Server.Location = New System.Drawing.Point(157, 87)
+        Me.Server.Name = "Server"
+        Me.Server.Size = New System.Drawing.Size(161, 26)
+        Me.Server.TabIndex = 14
+        Me.Server.Text = "Reading File......"
+        '
+        'Channel
+        '
+        Me.Channel.AutoSize = True
+        Me.Channel.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Channel.ForeColor = System.Drawing.Color.Orange
+        Me.Channel.Location = New System.Drawing.Point(174, 113)
+        Me.Channel.Name = "Channel"
+        Me.Channel.Size = New System.Drawing.Size(161, 26)
+        Me.Channel.TabIndex = 15
+        Me.Channel.Text = "Reading File......"
+        '
+        'Official
+        '
+        Me.Official.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Official.Location = New System.Drawing.Point(297, 168)
+        Me.Official.Name = "Official"
+        Me.Official.Size = New System.Drawing.Size(275, 43)
+        Me.Official.TabIndex = 17
+        Me.Official.Text = "Switch to Official Server"
+        Me.Official.UseVisualStyleBackColor = True
+        '
+        'Bilibili
+        '
+        Me.Bilibili.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Bilibili.Location = New System.Drawing.Point(12, 168)
+        Me.Bilibili.Name = "Bilibili"
+        Me.Bilibili.Size = New System.Drawing.Size(275, 43)
+        Me.Bilibili.TabIndex = 16
+        Me.Bilibili.Text = "Switch to Bilibili Server"
+        Me.Bilibili.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(584, 243)
+        Me.ClientSize = New System.Drawing.Size(584, 372)
+        Me.Controls.Add(Me.Official)
+        Me.Controls.Add(Me.Bilibili)
+        Me.Controls.Add(Me.Channel)
+        Me.Controls.Add(Me.Server)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Game_version)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Start_Game)
         Me.Controls.Add(Me.Start_with_launcher)
         Me.Controls.Add(Me.Deactivate)
@@ -157,7 +256,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form1"
-        Me.Text = "Genshin Anti Harmony Activator"
+        Me.Text = "Genshin"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -173,4 +272,12 @@ Partial Class Form1
     Friend WithEvents Deactivate As Button
     Friend WithEvents Start_with_launcher As Button
     Friend WithEvents Start_Game As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Game_version As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Server As Label
+    Friend WithEvents Channel As Label
+    Friend WithEvents Official As Button
+    Friend WithEvents Bilibili As Button
 End Class
