@@ -5,7 +5,7 @@ Genshin anti camera down
 This project is to prevent the characters from disappearing when the camera is below. Do not try to use it in illegal ways.
 
 ## Usage
-* [User.help](https://aurora211.github.io/Genshin/help.html)
+* [User.help](https://aurora211.github.io/Genshin/)
 
 ## Principle
 Remove the file below will disable the disappearance.
