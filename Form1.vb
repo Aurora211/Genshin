@@ -174,8 +174,14 @@ Public Class Form1
 
     Private Sub Bilibili_Click(sender As Object, e As EventArgs) Handles Bilibili.Click
         Dim info As String() = ReadAllLines(Install_Path.Text & "\Genshin Impact Game\config.ini")
-        info(1) = "channel=14"
-        info(2) = "cps=bilibili"
+        For index = 0 To (info.Length - 1)
+            If info(index).Contains("channel=") Then
+                info(index) = "channel=14"
+            End If
+            If info(index).Contains("cps=") Then
+                info(2) = "cps=bilibili"
+            End If
+        Next
         Dim fin As String = info(0)
         For index = 2 To info.Length
             fin += Chr(10)
@@ -187,8 +193,15 @@ Public Class Form1
 
     Private Sub Official_Click(sender As Object, e As EventArgs) Handles Official.Click
         Dim info As String() = ReadAllLines(Install_Path.Text & "\Genshin Impact Game\config.ini")
-        info(1) = "channel=1"
-        info(2) = "cps=pcad360pz"
+        MsgBox(info.Length)
+        For index = 0 To (info.Length - 1)
+            If info(index).Contains("channel=") Then
+                info(index) = "channel=1"
+            End If
+            If info(index).Contains("cps=") Then
+                info(2) = "cps=mihayou"
+            End If
+        Next
         Dim fin As String = info(0)
         For index = 2 To info.Length
             fin += Chr(10)
