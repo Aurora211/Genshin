@@ -1,4 +1,7 @@
 # Genshin
+
+This BUG has been repaired by mihayou. But this program can still work as a server switch.
+
 Quickest way to change servers between bilibili and official.
 Genshin anti camera down
 
